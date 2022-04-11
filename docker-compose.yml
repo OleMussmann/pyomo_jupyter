@@ -1,0 +1,13 @@
+version: "3"
+services:
+  pyomo-notebook:
+    image: olemn/pyomo_jupyter:2022_04_11
+    volumes:
+      - ./work:/home/jovyan/work
+    ports:
+      - 8888:8888
+    container_name: pyomo-notebook-container
+    user: root
+    environment:
+      - NB_UID=${UID}
+      - NB_GID=${GID}
